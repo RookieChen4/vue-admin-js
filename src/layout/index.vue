@@ -1,5 +1,6 @@
 <template>
   <div :class="classObj" class="app-wrap">
+    <DateTime />
     <sidebar class="siderbar" />
     <div class="main-container">
       <div :class="{'fixed-header':fixedHeader}">
@@ -14,13 +15,15 @@
 <script>
 import { mapGetters } from 'vuex'
 import { Sidebar, AppMain, Navbar, TagsView } from './components'
+import DateTime from '@/components/dateTime'
 export default {
   name: 'Layout',
   components: {
     Sidebar,
     AppMain,
     Navbar,
-    TagsView
+    TagsView,
+    DateTime
   },
   data() {
     return {

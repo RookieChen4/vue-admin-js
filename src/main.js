@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import Cookies from 'js-cookie'
 import '../mock/index'
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 import Element from 'element-ui'
@@ -14,10 +15,17 @@ Vue.config.productionTip = false
 //   require('../mock')
 // }
 
-Vue.use(Element)
+Vue.use(Element, {
+  size: Cookies.get('size') || 'medium' // set element-ui default size
+})
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  created: () => {
+    setInterval(function() {
+      store.dispatch('dateTime/setDateTime')
+    }, 10)
+  }
 }).$mount('#app')
