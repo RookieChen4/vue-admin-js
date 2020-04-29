@@ -8,16 +8,17 @@ import Layout from '@/layout'
 export const constantRoutes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'test1',
     component: Layout,
-    hidden: true,
+    hidden: false,
     meta: {
-      name: '主页'
+      name: '测试1'
     },
     children: [
       {
-        path: 'log',
+        path: 'Home',
         name: 'test',
+        component: () => import('@/views/Home'),
         meta: {
           name: '分页'
         }
@@ -26,34 +27,17 @@ export const constantRoutes = [
   },
   {
     path: '/',
-    name: 'Home',
+    name: 'test2',
     component: Layout,
     hidden: false,
     meta: {
-      name: '主页'
+      name: '测试2'
     },
     children: [
       {
-        path: 'log',
-        name: 'test',
-        meta: {
-          name: '分页'
-        }
-      }
-    ]
-  },
-  {
-    path: '/',
-    name: 'Home',
-    component: Layout,
-    hidden: false,
-    meta: {
-      name: '主页'
-    },
-    children: [
-      {
-        path: 'log',
-        name: 'test',
+        path: 'log2',
+        name: 'About',
+        component: () => import('@/views/About'),
         meta: {
           name: '分页'
         }

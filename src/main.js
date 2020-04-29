@@ -22,10 +22,10 @@ Vue.use(Element, {
 new Vue({
   router,
   store,
-  render: h => h(App),
   created: () => {
     setInterval(function() {
       store.dispatch('dateTime/setDateTime')
     }, 10)
-  }
+  },
+  render: h => h(App)
 }).$mount('#app')

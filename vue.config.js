@@ -36,6 +36,16 @@ module.exports = {
       warnings: false,
       errors: true
     },
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:3000/dev-api/',
+    //     ws: true,
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       '^/api': ''
+    //     }
+    //   }
+    // },
     before: require('./mock/index.js')
   },
   configureWebpack: {

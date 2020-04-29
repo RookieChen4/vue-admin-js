@@ -20,7 +20,7 @@
 export default {
   data() {
     return {
-      isActive: false
+      isActive: true
     }
   },
   methods: {
@@ -52,7 +52,7 @@ export default {
   width: 20px;
   height: 20px;
 }
-.hamburger.is-active {
+.hamburger .is-active {
   transform: rotate(180deg);
 }
 .breadcrumb{

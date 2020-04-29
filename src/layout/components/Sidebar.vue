@@ -10,14 +10,15 @@
         :active-text-color="variables.menuActiveText"
         :text-color="variables.menuText"
         mode="vertical"
+        router
       >
         <template v-for="(item, index) in routes">
-          <el-submenu v-if="!item.hidden" :key="item.id" :index="index.toString()">
+          <el-submenu v-if="!item.hidden" :key="item.id" :index="index + ''">
             <template slot="title">
               <i class="el-icon-location" />
               <span>{{ item.meta.name }}</span>
             </template>
-            <el-menu-item v-for="subItem in item.children" :key="subItem.id">{{ subItem.meta.name }}</el-menu-item>
+            <el-menu-item v-for="subItem in item.children" :key="subItem.id" :index="subItem.path">{{ subItem.meta.name }}</el-menu-item>
           </el-submenu>
         </template>
       </el-menu>
