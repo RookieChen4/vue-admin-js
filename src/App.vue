@@ -5,16 +5,9 @@
 </template>
 
 <script>
-// import request from '@/utils/request'
 export default {
   name: 'App',
   created() {
-    // request({
-    //   method: 'get',
-    //   url: '/test123'
-    // }).then(res => {
-    //   console.log(res)
-    // })
   }
 }
 </script>

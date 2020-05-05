@@ -17,7 +17,8 @@ body {
     }
     .siderbar{
         transition: width .25s;
-        background-color: #81ecec;
+        background-color: #3ae374;
+        // background: linear-gradient(#1abc9c);
         position: fixed;
         height: 100%;
         top: 0;
@@ -101,5 +102,16 @@ body {
     }
     .el-menu--collapse .el-menu .el-submenu {
         min-width: $sideBarWidth !important;
+    }
+    .el-submenu .el-menu-item.is-active {
+      background-color: #7efff5 !important;
+    }
+    .el-submenu {
+      &.is-active.is-opened .el-submenu__title{
+        background-color: #67e6dc !important;
       }
+    }
+    .el-submenu__title i {
+      color: white;
+    }
 }

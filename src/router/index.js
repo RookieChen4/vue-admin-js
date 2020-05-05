@@ -7,31 +7,39 @@ import Layout from '@/layout'
 
 export const constantRoutes = [
   {
+    path: '/login',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
+  {
     path: '/',
-    name: 'test1',
     component: Layout,
+    redirect: '/Home',
     hidden: false,
     meta: {
-      name: '测试1'
+      name: '测试1',
+      title: 'Home'
     },
     children: [
       {
-        path: 'Home',
-        name: 'test',
+        path: '/Home',
+        name: 'Home',
         component: () => import('@/views/Home'),
         meta: {
-          name: '分页'
+          name: '分页',
+          title: 'Home'
         }
       }
     ]
   },
   {
-    path: '/',
+    path: '/test2',
     name: 'test2',
     component: Layout,
     hidden: false,
     meta: {
-      name: '测试2'
+      name: '测试2',
+      title: 'test2'
     },
     children: [
       {
@@ -39,7 +47,8 @@ export const constantRoutes = [
         name: 'About',
         component: () => import('@/views/About'),
         meta: {
-          name: '分页'
+          name: '分页',
+          title: 'log2'
         }
       }
     ]
@@ -48,20 +57,40 @@ export const constantRoutes = [
 
 export const asyncRoutes = [
   {
-    path: '/',
-    name: 'Home',
+    path: '/Permission1',
+    name: 'Permission1',
     component: Layout,
     meta: {
       title: 'Page Permission',
-      roles: ['admin']
-    }
+      roles: ['admin', 'editor'],
+      name: '添加1'
+    },
+    children: [
+      {
+        path: 'log3',
+        name: 'log3',
+        component: () => import('@/views/About'),
+        meta: {
+          name: '分页',
+          title: 'log3'
+        }
+      },
+      {
+        path: 'log4',
+        name: 'log3',
+        component: () => import('@/views/About'),
+        meta: {
+          name: '分页',
+          title: 'log3'
+        }
+      }
+    ]
   }
 ]
 
 const createRouter = () => new VueRouter({
   mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
-  base: process.env.BASE_URL,
   routes: constantRoutes
 })
 
