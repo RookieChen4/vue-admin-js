@@ -18,16 +18,18 @@ export const constantRoutes = [
     hidden: false,
     meta: {
       name: '测试1',
-      title: 'Home'
+      title: 'Home',
+      icon: 'dashboard'
     },
     children: [
       {
-        path: '/Home',
+        path: 'Home',
         name: 'Home',
         component: () => import('@/views/Home'),
         meta: {
           name: '分页',
-          title: 'Home'
+          title: 'Home',
+          icon: 'dashboard'
         }
       }
     ]
@@ -39,7 +41,8 @@ export const constantRoutes = [
     hidden: false,
     meta: {
       name: '测试2',
-      title: 'test2'
+      title: 'test2',
+      icon: 'dashboard'
     },
     children: [
       {
@@ -48,7 +51,8 @@ export const constantRoutes = [
         component: () => import('@/views/About'),
         meta: {
           name: '分页',
-          title: 'log2'
+          title: 'log2',
+          icon: 'dashboard'
         }
       }
     ]
@@ -77,7 +81,7 @@ export const asyncRoutes = [
       },
       {
         path: 'log4',
-        name: 'log3',
+        name: 'log4',
         component: () => import('@/views/About'),
         meta: {
           name: '分页',
@@ -85,6 +89,17 @@ export const asyncRoutes = [
         }
       }
     ]
+  },
+  {
+    path: '/test3',
+    name: 'test3',
+    component: Layout,
+    hidden: false,
+    alwaysShow: false,
+    meta: {
+      name: '测试2',
+      title: 'test2'
+    }
   }
 ]
 

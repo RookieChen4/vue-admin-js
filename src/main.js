@@ -10,6 +10,7 @@ import './styles/element-variables.scss'
 import '@/styles/index.scss' // global css
 Vue.config.productionTip = false
 import './permission'
+import './icons' // icon
 // if (process.env.NODE_ENV === 'development') {
 //   console.log('mock')
 //   require('../mock')
