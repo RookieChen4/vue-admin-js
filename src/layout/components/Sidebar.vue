@@ -42,8 +42,6 @@ export default {
   },
   created() {
     // this.routes = this.permission_routes
-    console.log(this.$router)
-    console.log(this.permission_routes)
     this.routes = this.$router.options.routes
   },
   computed: {

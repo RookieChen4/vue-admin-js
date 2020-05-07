@@ -7,6 +7,9 @@ body {
     height: 100vh;
     box-sizing: border-box;
 }
+a{
+  text-decoration: none;
+}
 #app {
     height: 100%;
     .app-main {
@@ -105,6 +108,9 @@ body {
     }
     .el-submenu .el-menu-item.is-active {
       background-color: #7efff5 !important;
+    }
+    .el-menu-item.is-active.submenu-title-noDropdown {
+      background-color: #67e6dc !important;
     }
     .el-submenu {
       &.is-active.is-opened .el-submenu__title{

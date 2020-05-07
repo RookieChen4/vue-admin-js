@@ -34,9 +34,7 @@ export default {
     getBreadcrumb() {
       // only show routes with meta.title
       let matched = this.$route.matched.filter(item => item.meta && item.meta.title)
-      console.log('123', matched, this.$route.matched)
       const first = matched[0]
-
       if (!this.isDashboard(first)) {
         matched = [{ path: '/Home', meta: { title: 'Home' }}].concat(matched)
       }
@@ -52,6 +50,7 @@ export default {
       return name.trim().toLocaleLowerCase() === 'Home'.toLocaleLowerCase()
     },
     pathCompile(path) {
+      console.log(123, path)
       // To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
       const { params } = this.$route
       var toPath = pathToRegexp.compile(path)

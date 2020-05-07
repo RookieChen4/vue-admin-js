@@ -15,19 +15,13 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     redirect: '/Home',
-    hidden: false,
-    meta: {
-      name: '测试1',
-      title: 'Home',
-      icon: 'dashboard'
-    },
     children: [
       {
         path: 'Home',
         name: 'Home',
         component: () => import('@/views/Home'),
         meta: {
-          name: '分页',
+          name: 'Home',
           title: 'Home',
           icon: 'dashboard'
         }
@@ -89,22 +83,11 @@ export const asyncRoutes = [
         }
       }
     ]
-  },
-  {
-    path: '/test3',
-    name: 'test3',
-    component: Layout,
-    hidden: false,
-    alwaysShow: false,
-    meta: {
-      name: '测试2',
-      title: 'test2'
-    }
   }
 ]
 
 const createRouter = () => new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
