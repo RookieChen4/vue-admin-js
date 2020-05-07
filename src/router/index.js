@@ -32,12 +32,6 @@ export const constantRoutes = [
     path: '/test2',
     name: 'test2',
     component: Layout,
-    hidden: false,
-    meta: {
-      name: '测试2',
-      title: 'test2',
-      icon: 'dashboard'
-    },
     children: [
       {
         path: 'log2',
@@ -58,6 +52,8 @@ export const asyncRoutes = [
     path: '/Permission1',
     name: 'Permission1',
     component: Layout,
+    redirect: '/Permission1/log3',
+    // redirect: 'noRedirect',
     meta: {
       title: 'Page Permission',
       roles: ['admin', 'editor'],
@@ -79,7 +75,7 @@ export const asyncRoutes = [
         component: () => import('@/views/About'),
         meta: {
           name: '分页',
-          title: 'log3'
+          title: 'log4'
         }
       }
     ]

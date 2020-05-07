@@ -47,7 +47,7 @@ export default {
   },
   watch: {
     isCollapse: (val) => {
-      console.log(val)
+      // console.log(val)
     }
   }
 }
