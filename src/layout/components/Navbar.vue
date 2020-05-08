@@ -13,6 +13,7 @@
       </svg>
     </div>
     <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
+    <div style="float:right" @click="loginOut">登出</div>
   </div>
 </template>
 
@@ -31,6 +32,10 @@ export default {
     toggleClick() {
       this.isActive = !this.isActive
       this.$store.dispatch('app/toggleSideBar')
+    },
+    async loginOut() {
+      await this.$store.dispatch('user/logout')
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     }
   }
 }

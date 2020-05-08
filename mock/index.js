@@ -11,3 +11,7 @@ Mock.mock('http://localhost:3000/api/login', 'post', {
   token: '111'
 })
 
+Mock.mock('http://localhost:3000/api/logout', 'post', {
+  code: 200,
+  token: '111'
+})
