@@ -10,6 +10,7 @@ body {
 a{
   text-decoration: none;
 }
+.noScroll::-webkit-scrollbar { width: 0 !important }
 #app {
     height: 100%;
     .app-main {
