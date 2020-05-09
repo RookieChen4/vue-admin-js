@@ -19,6 +19,9 @@ a{
         position: relative;
         overflow: hidden;
     }
+    .home {
+      min-height: calc(100vh - 85px);
+    }
     .siderbar{
         transition: width .25s;
         background-color: #3ae374;
@@ -55,6 +58,9 @@ a{
         margin-left: $sideBarWidth;
     }
     .hideSidebar {
+        #container {
+          width: calc(100vw - 54px);
+        }
         .siderbar {
             width: 54px !important;
         }

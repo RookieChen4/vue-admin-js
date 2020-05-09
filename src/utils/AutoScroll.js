@@ -17,8 +17,8 @@ export function AutoScrollList(id) {
           setTime1 = setTimeout(function() {
             // $(listBox).animate({scrollTop: 0}, 'fast');
             listBox.scrollTop = 0
-          }, 3000)
-          setTime2 = setTimeout(startScroll, 5000)
+          }, 2000)
+          setTime2 = setTimeout(startScroll, 4000)
         }
       }, 30)
     }
@@ -29,14 +29,13 @@ export function AutoScrollList(id) {
     clearTimeout(setTime1)
     clearTimeout(setTime2)
   }
-
-  listBox.addEventListener('mouseover', function() {
+  listBox ? listBox.addEventListener('mouseover', function() {
     stopScroll()
-  })
+  }) : ''
 
-  listBox.addEventListener('mouseout', function() {
+  listBox ? listBox.addEventListener('mouseout', function() {
     startScroll()
-  })
+  }) : ''
 
-  startScroll()
+  listBox ? startScroll() : ''
 }
