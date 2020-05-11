@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2>公告栏文字停顿滚动</h2>
     <div class="textBox">
       <transition name="slide">
         <p :key="text.id" class="text">{{ text.val }}</p>

@@ -15,7 +15,6 @@ export function AutoScrollList(id) {
         } else {
           clearInterval(intervalScroll)
           setTime1 = setTimeout(function() {
-            // $(listBox).animate({scrollTop: 0}, 'fast');
             listBox.scrollTop = 0
           }, 2000)
           setTime2 = setTimeout(startScroll, 4000)

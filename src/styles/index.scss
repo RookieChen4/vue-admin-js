@@ -4,7 +4,7 @@ html {
     box-sizing: border-box;
 }
 body {
-    height: 100vh;
+    height: 100%;
     box-sizing: border-box;
 }
 a{
@@ -13,6 +13,7 @@ a{
 .noScroll::-webkit-scrollbar { width: 0 !important }
 #app {
     height: 100%;
+    overflow: hidden;
     .app-main {
         min-height: calc(100vh - 85px);
         width: 100%;

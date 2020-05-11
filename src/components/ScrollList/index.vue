@@ -13,84 +13,6 @@
         <div>{{ item.type }}</div>
         <div>{{ item.time }}</div>
       </div>
-      <!-- <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div>
-      <div class="item">
-        <div>姓名</div>
-        <div>状态</div>
-        <div>类型</div>
-        <div>时间</div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -103,13 +25,13 @@ export default {
     return {
       listBox: 1,
       list: [{
-        name: 'cjh',
+        name: '你好',
         status: '1',
         type: '1',
         time: '2010-1-1'
       },
       {
-        name: 'cjh',
+        name: '你好',
         status: '1',
         type: '1',
         time: '2010-1-1'
@@ -186,14 +108,23 @@ export default {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  background-color: #3498db;
+  padding: 5px 10px;
 }
 .listBox {
   height: 150px;
   overflow: auto;
+  .item:nth-child(2n) {
+      background-color: #bdc3c7;
+  }
   .item {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
+    align-items: center;
+    div {
+      padding: 5px 10px;
+    }
   }
 }
 .listBox::-webkit-scrollbar { width: 0 !important }

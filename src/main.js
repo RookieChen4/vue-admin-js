@@ -8,9 +8,10 @@ import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 import Element from 'element-ui'
 import './styles/element-variables.scss'
 import '@/styles/index.scss' // global css
-Vue.config.productionTip = false
 import './permission'
 import './icons' // icon
+import '../node_modules/swiper/css/swiper.min.css'
+Vue.config.productionTip = false
 // if (process.env.NODE_ENV === 'development') {
 //   console.log('mock')
 //   require('../mock')
