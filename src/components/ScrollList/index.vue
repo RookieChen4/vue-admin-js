@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ScrollList">
     <div class="head">
       <div>姓名</div>
       <div>状态</div>
@@ -89,6 +89,18 @@ export default {
         status: '1',
         type: '1',
         time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjhxx',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
       }]
     }
   },
@@ -104,6 +116,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.ScrollList {
+  height: 100%;
+  pointer-events: visible;
+  // display: flex;
+  // flex-direction: column;
+  display: grid;
+  // grid-template-rows: 1fr 1fr 300px
+  overflow: hidden;
+}
 .head {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -112,19 +133,17 @@ export default {
   padding: 5px 10px;
 }
 .listBox {
-  height: 150px;
-  overflow: auto;
+  // flex: 1;
+  overflow: scroll;
   .item:nth-child(2n) {
-      background-color: #bdc3c7;
+    background-color: #bdc3c7;
   }
   .item {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     align-items: center;
-    div {
-      padding: 5px 10px;
-    }
+    padding: 5px 10px;
   }
 }
 .listBox::-webkit-scrollbar { width: 0 !important }

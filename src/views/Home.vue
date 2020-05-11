@@ -3,12 +3,12 @@
     <div class="main">
       <img alt="Vue logo" src="../assets/logo.png">
       <Scroll />
-      <div style="width:300px">
-        <ScrollList />
+      <div class="container">
+        <div class="grid-item1"><ScrollList /></div>
+        <div class="grid-item2"><ScrollList /></div>
+        <div class="grid-item3">1233</div>
       </div>
-      <div style="width:300px;pointer-events:visible">
-        <ScrollList />
-      </div>
+      <ScrollList style="display:none" />
     </div>
     <Amap />
   </div>
@@ -18,7 +18,6 @@
 // @ is an alias to /src
 import Scroll from '@/components/NoticeList'
 import ScrollList from '@/components/ScrollList'
-import { AutoScrollList } from '@/utils/AutoScroll'
 import Amap from '@/components/Amap'
 export default {
   name: 'Home',
@@ -28,8 +27,6 @@ export default {
     Amap
   },
   mounted() {
-    AutoScrollList('test')
-    AutoScrollList('test2')
   }
 }
 </script>
@@ -38,17 +35,29 @@ export default {
 .home {
   height: 100%;
 }
-#container {
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: calc(100vw - 210px);
-  height: 100%;
+.container {
+  width: 300px;
+  height: 600px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 300px
+  // display: flex;
+  // flex-direction: column;
 }
 .main {
   position: relative;
   z-index: 11;
-  pointer-events:none
+  pointer-events:none;
+}
+.grid-item1 {
+  // flex: 1;
+  overflow: hidden;
+}
+.grid-item2 {
+  // flex: 1;
+  overflow: hidden;
+}
+.grid-item3 {
+  // flex: 1;
+  overflow: hidden;
 }
 </style>
