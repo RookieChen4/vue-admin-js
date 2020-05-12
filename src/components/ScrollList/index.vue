@@ -122,7 +122,7 @@ export default {
   // display: flex;
   // flex-direction: column;
   display: grid;
-  // grid-template-rows: 1fr 1fr 300px
+  grid-template-rows: auto 1fr;
   overflow: hidden;
 }
 .head {

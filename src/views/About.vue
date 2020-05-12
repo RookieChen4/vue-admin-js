@@ -2,10 +2,10 @@
   <div class="about">
     <h1>This is an about page</h1>
     <Swiper>
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide"><div class="img"/></div>
+      <div class="swiper-slide"><div class="img"/></div>
+      <div class="swiper-slide"><div class="img"/></div>
+      <div class="swiper-slide"><div class="img"/></div>
     </Swiper>
     <div class="grid">
       <div class="grid-item1">
@@ -68,4 +68,16 @@ export default {
   background-color: blue;
   overflow: scroll;
 }
+.img{
+  width: 100px;
+  background: url('../assets/logo.png');
+ }
+.swiper-slide.swiper-slide-prev .img {
+  // background: url('../assets/logo.png');
+  transform: scale(.9) translateY(-10px) rotateY(45deg) skewY(5deg);
+}
+// .swiper-slide.swiper-slide-next .img{
+//     background: url('../assets/logo.png');
+//     transform: scale(.9) translateY(-10px) rotateY(-45deg) skewY(-5deg);
+// }
 </style>
