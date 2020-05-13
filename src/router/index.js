@@ -77,6 +77,15 @@ export const asyncRoutes = [
           name: '分页',
           title: 'log4'
         }
+      },
+      {
+        path: 'log5',
+        name: 'log5',
+        component: () => import('@/views/loadingTest'),
+        meta: {
+          name: '分页',
+          title: 'log5'
+        }
       }
     ]
   }
