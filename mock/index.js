@@ -1,6 +1,6 @@
 import Mock from 'mockjs'
 Mock.setup({
-  timeout: 5000
+  timeout: 2000
 })
 Mock.mock('http://localhost:3000/dev-api/test', 'get', {
   test: '111'
