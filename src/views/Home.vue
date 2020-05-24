@@ -19,12 +19,18 @@
 import Scroll from '@/components/NoticeList'
 import ScrollList from '@/components/ScrollList'
 import Amap from '@/components/Amap'
+import { getloading } from '@/api/loading'
 export default {
   name: 'Home',
   components: {
     Scroll,
     ScrollList,
     Amap
+  },
+  created() {
+    getloading().then(res => {
+      console.log('home', res)
+    })
   },
   mounted() {
   }

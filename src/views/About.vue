@@ -66,9 +66,15 @@
 
 <script>
 import Swiper from '@/components/Swiper'
+import { getloading } from '@/api/loading'
 export default {
   components: {
     Swiper
+  },
+  created() {
+    getloading().then(res => {
+      console.log('ab', res)
+    })
   }
 }
 </script>
