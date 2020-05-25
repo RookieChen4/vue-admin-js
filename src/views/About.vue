@@ -4,24 +4,24 @@
     <div class="Swiper-container">
       <Swiper direction="horizontal" swipeid="test2" loop="true" slides-per-view="3">
         <div class="swiper-slide">
-          <div class="img">
+          <router-link class="img">
             1
-          </div>
+          </router-link>
         </div>
         <div class="swiper-slide">
-          <div class="img">
+          <router-link class="img" to="/about">
             2
-          </div>
+          </router-link>
         </div>
         <div class="swiper-slide">
-          <div class="img">
+          <router-link class="img" to="/about">
             3
-          </div>
+          </router-link>
         </div>
         <div class="swiper-slide">
-          <div class="img">
+          <router-link class="img" to="/about">
             4
-          </div>
+          </router-link>
         </div>
       </Swiper>
     </div>
@@ -69,6 +69,11 @@ import Swiper from '@/components/Swiper'
 export default {
   components: {
     Swiper
+  },
+  methods: {
+    test() {
+      console.log('123')
+    }
   }
 }
 </script>
@@ -96,6 +101,9 @@ export default {
   margin: 0 auto;
   width: 800px;
   height: 200px;
+  a{
+    display: block;
+  }
 }
 .img{
   width: 100%;
