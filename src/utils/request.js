@@ -2,12 +2,17 @@ import axios from 'axios'
 import { Message } from 'element-ui'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
-
+// eslint-disable-next-line prefer-const
+let cancelArr = []
+export { cancelArr }
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 5000 // request timeout
+  timeout: 5000, // request timeout
+  cancelToken: new axios.CancelToken(cancel => {
+    cancelArr.push({ cancel })
+  })
 })
 
 // request interceptor

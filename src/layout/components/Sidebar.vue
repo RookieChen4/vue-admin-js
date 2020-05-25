@@ -2,6 +2,7 @@
   <div :class="{'has-logo':showLogo}">
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
+        :default-active="activeMenu"
         class="el-menu-vertical-demo"
         background-color="transparent"
         :collapse="isCollapse"
@@ -49,6 +50,15 @@ export default {
       'permission_routes',
       'sidebar'
     ]),
+    activeMenu() {
+      const route = this.$route
+      const { meta, path } = route
+      // if set path, the sidebar will highlight the path you set
+      if (meta.activeMenu) {
+        return meta.activeMenu
+      }
+      return path
+    },
     variables() {
       return variables
     },

@@ -3,7 +3,7 @@ import store from './store'
 import { getToken } from '@/utils/auth' // get token from cookie
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
-
+import { cancelArr } from '@/utils/request'
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 const whiteList = ['/login'] // no redirect whitelist
@@ -11,6 +11,11 @@ const whiteList = ['/login'] // no redirect whitelist
 router.beforeEach(async(to, from, next) => {
   NProgress.start()
   const hasToken = getToken()
+  console.log(cancelArr, to, from)
+  // cancelArr.forEach((ele, index) => {
+  //   ele.cancel()
+  //   cancelArr.splice(index, 1)
+  // })
   if (hasToken) {
     if (to.path === '/login') {
       next({ path: '/' })
