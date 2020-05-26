@@ -28,9 +28,10 @@ export default {
     Amap
   },
   created() {
+    console.log('createdHome')
     getloading().then(res => {
       console.log('home', res)
-    })
+    }).catch(err => console.error(err))
   },
   mounted() {
   }

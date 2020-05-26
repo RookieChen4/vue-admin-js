@@ -12,10 +12,10 @@ router.beforeEach(async(to, from, next) => {
   NProgress.start()
   const hasToken = getToken()
   console.log(cancelArr, to, from)
-  // cancelArr.forEach((ele, index) => {
-  //   ele.cancel()
-  //   cancelArr.splice(index, 1)
-  // })
+  cancelArr.forEach((ele, index) => {
+    ele.cancel('中断')
+    cancelArr.splice(index, 1)
+  })
   if (hasToken) {
     if (to.path === '/login') {
       next({ path: '/' })
@@ -53,5 +53,6 @@ router.beforeEach(async(to, from, next) => {
 })
 
 router.afterEach(() => {
+  console.log(cancelArr)
   NProgress.done()
 })

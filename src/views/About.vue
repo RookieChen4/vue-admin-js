@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <div class="Swiper-container">
+    <!-- <div class="Swiper-container">
       <Swiper direction="horizontal" swipeid="test2" loop="true" slides-per-view="3">
         <div class="swiper-slide">
           <router-link class="img">
@@ -9,22 +9,22 @@
           </router-link>
         </div>
         <div class="swiper-slide">
-          <router-link class="img" to="/about">
+          <router-link class="img">
             2
           </router-link>
         </div>
         <div class="swiper-slide">
-          <router-link class="img" to="/about">
+          <router-link class="img">
             3
           </router-link>
         </div>
         <div class="swiper-slide">
-          <router-link class="img" to="/about">
+          <router-link class="img">
             4
           </router-link>
         </div>
       </Swiper>
-    </div>
+    </div> -->
     <div class="grid">
       <div class="grid-item1">
         <div>1</div>
@@ -61,20 +61,33 @@
         <div class="swiper-slide">2</div>
       </Swiper>
     </div>
+    <Test :level="2">
+      <template v-slot:head1>second</template>
+      <template v-slot:head2>second</template>
+      <template v-slot:head3>second</template>
+    </Test>
   </div>
 </template>
 
 <script>
 import Swiper from '@/components/Swiper'
 import { getloading } from '@/api/loading'
+import Test from './Test/index'
 export default {
   components: {
-    Swiper
+    Swiper,
+    Test
+  },
+  data() {
+    return {
+      num: 1
+    }
   },
   created() {
+    console.log('createdAbout')
     getloading().then(res => {
       console.log('ab', res)
-    })
+    }).catch(err => console.error(err))
   },
   methods: {
     test() {
