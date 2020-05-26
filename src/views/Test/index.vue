@@ -8,13 +8,28 @@ export default {
       default: 1
     }
   },
+  attrs: {
+    id: 'foo'
+  },
   render: function(createElement, context) {
-    console.log(context.slots(), context)
+    const clickHandler = (el) => {
+      console.log('clickHandler', el)
+    }
+    const data = Object.assign({}, context.data,
+      {
+        attrs: {
+          style: 'color:red'
+        }
+      })
+    console.log(context)
     return createElement(
       'h' + context.props.level,
-      [context.slots().head1,
-        context.slots().head2,
-        context.slots().head3]
+      { ...data },
+      [...Array.apply(null, { length: 3 }).map(function(value, index) {
+        return createElement('p', { on: {
+          click: clickHandler
+        }}, context.slots()['head' + (index + 1)])
+      }), context.children]
     )
   }
 }

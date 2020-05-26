@@ -61,11 +61,15 @@
         <div class="swiper-slide">2</div>
       </Swiper>
     </div>
-    <Test :level="2">
+    <Test :level="2" style="font-size:20px">
       <template v-slot:head1>second</template>
       <template v-slot:head2>second</template>
       <template v-slot:head3>second</template>
+      <span>123</span>
     </Test>
+    <Test2>
+      <template v-slot:default>second</template>
+    </Test2>
   </div>
 </template>
 
@@ -73,10 +77,12 @@
 import Swiper from '@/components/Swiper'
 import { getloading } from '@/api/loading'
 import Test from './Test/index'
+import Test2 from './Test/test'
 export default {
   components: {
     Swiper,
-    Test
+    Test,
+    Test2
   },
   data() {
     return {
