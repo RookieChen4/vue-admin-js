@@ -1,30 +1,30 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <div class="Swiper-container">
+    <!-- <div class="Swiper-container">
       <Swiper direction="horizontal" swipeid="test2" loop="true" slides-per-view="3">
         <div class="swiper-slide">
-          <div class="img">
+          <router-link class="img">
             1
-          </div>
+          </router-link>
         </div>
         <div class="swiper-slide">
-          <div class="img">
+          <router-link class="img">
             2
-          </div>
+          </router-link>
         </div>
         <div class="swiper-slide">
-          <div class="img">
+          <router-link class="img">
             3
-          </div>
+          </router-link>
         </div>
         <div class="swiper-slide">
-          <div class="img">
+          <router-link class="img">
             4
-          </div>
+          </router-link>
         </div>
       </Swiper>
-    </div>
+    </div> -->
     <div class="grid">
       <div class="grid-item1">
         <div>1</div>
@@ -62,20 +62,75 @@
       </Swiper>
     </div>
     <svg-icon icon-class="dashboard" />
+    <Test :level="2" style="font-size:20px">
+      <template v-slot:head1>second</template>
+      <template v-slot:head2>second</template>
+      <template v-slot:head3>second</template>
+      <span>123</span>
+    </Test>
+    <Test2>
+      <template v-slot:default>second</template>
+    </Test2>
+    <test />
+    <test3 :item="item">
+      <template v-slot:reserve1>{{ item.reserve1 }}</template>
+      <template v-slot:reserve2>second</template>
+      <template v-slot:reserve3>second</template>
+      <template v-slot:reserve4>second</template>
+    </test3>
   </div>
 </template>
 
 <script>
 import Swiper from '@/components/Swiper'
 import { getloading } from '@/api/loading'
+import Test from './Test/index'
+import Test2 from './Test/test'
+import test from './test.vue'
+import test3 from './Test/test3'
 export default {
   components: {
-    Swiper
+    Swiper,
+    Test,
+    Test2,
+    test,
+    test3
+  },
+  data() {
+    this.test = 'test'
+    return {
+      num: 1,
+      item: [{
+        reserve1: '1',
+        reserve2: '2',
+        reserve3: '3',
+        reserve4: '4'
+      },
+      {
+        reserve1: '1',
+        reserve2: '2',
+        reserve3: '3',
+        reserve4: '4'
+      },
+      {
+        reserve1: '1',
+        reserve2: '2',
+        reserve3: '3',
+        reserve4: '4'
+      }]
+    }
   },
   created() {
+    this.test = 'abc'
+    console.log('createdAbout')
     getloading().then(res => {
       console.log('ab', res)
-    })
+    }).catch(err => console.error(err))
+  },
+  methods: {
+    test() {
+      console.log('123')
+    }
   }
 }
 </script>
@@ -103,6 +158,9 @@ export default {
   margin: 0 auto;
   width: 800px;
   height: 200px;
+  a{
+    display: block;
+  }
 }
 .img{
   width: 100%;

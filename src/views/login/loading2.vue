@@ -1,0 +1,42 @@
+<template>
+  <div class="container" />
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style lang="scss" scoped>
+*{
+    padding: 0;
+    margin: 0;
+}
+.container {
+    background-color: #bdc3c7;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.container::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,#1abc9c,#2ecc71,#3498db,#9b59b6,#e67e22,#1abc9c);
+    background-size: 600%;
+    animation: transformbg 10s linear infinite;
+    opacity: 0.4;
+}
+@keyframes transformbg {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 600%;
+    }
+}
+</style>
