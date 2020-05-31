@@ -61,6 +61,7 @@
         <div class="swiper-slide">2</div>
       </Swiper>
     </div>
+    <svg-icon icon-class="dashboard" />
   </div>
 </template>
 

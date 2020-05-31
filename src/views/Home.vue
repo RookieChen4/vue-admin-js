@@ -7,6 +7,7 @@
         <div class="grid-item1"><ScrollList /></div>
         <div class="grid-item2"><ScrollList /></div>
         <div class="grid-item3">1233</div>
+        <svg-icon icon-class="dashboard" />
       </div>
       <ScrollList style="display:none" />
     </div>
@@ -28,6 +29,7 @@ export default {
     Amap
   },
   created() {
+    this.$message({ message: '这是一条消息提示', duration: 0, center: true })
     getloading().then(res => {
       console.log('home', res)
     })

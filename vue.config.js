@@ -1,12 +1,11 @@
 'use strict'
 const path = require('path')
-const defaultSettings = require('./src/settings.js')
 
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || 'vue Element Admin' // page title
+const name = 'vue Element Admin' // page title
 
 // If your port is set to 80,
 // use administrator privileges to execute the command line.
@@ -35,18 +34,8 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    },
-    // proxy: {
-    //   '/api': {
-    //     target: 'http://localhost:3000/dev-api/',
-    //     ws: true,
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       '^/api': ''
-    //     }
-    //   }
-    // },
-    before: require('./mock/index.js')
+    }
+    // before: require('./mock/index.js')
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
