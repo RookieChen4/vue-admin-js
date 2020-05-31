@@ -66,7 +66,7 @@ export const asyncRoutes = [
     },
     children: [
       {
-        path: 'log3',
+        path: '/Permission1/log3',
         name: 'log3',
         component: () => import('@/views/About'),
         meta: {

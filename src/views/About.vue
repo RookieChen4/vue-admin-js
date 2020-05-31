@@ -70,6 +70,13 @@
     <Test2>
       <template v-slot:default>second</template>
     </Test2>
+    <test />
+    <test3 :item="item">
+      <template v-slot:reserve1>{{ item.reserve1 }}</template>
+      <template v-slot:reserve2>second</template>
+      <template v-slot:reserve3>second</template>
+      <template v-slot:reserve4>second</template>
+    </test3>
   </div>
 </template>
 
@@ -78,18 +85,42 @@ import Swiper from '@/components/Swiper'
 import { getloading } from '@/api/loading'
 import Test from './Test/index'
 import Test2 from './Test/test'
+import test from './test.vue'
+import test3 from './Test/test3'
 export default {
   components: {
     Swiper,
     Test,
-    Test2
+    Test2,
+    test,
+    test3
   },
   data() {
+    this.test = 'test'
     return {
-      num: 1
+      num: 1,
+      item: [{
+        reserve1: '1',
+        reserve2: '2',
+        reserve3: '3',
+        reserve4: '4'
+      },
+      {
+        reserve1: '1',
+        reserve2: '2',
+        reserve3: '3',
+        reserve4: '4'
+      },
+      {
+        reserve1: '1',
+        reserve2: '2',
+        reserve3: '3',
+        reserve4: '4'
+      }]
     }
   },
   created() {
+    this.test = 'abc'
     console.log('createdAbout')
     getloading().then(res => {
       console.log('ab', res)
