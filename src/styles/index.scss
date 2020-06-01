@@ -87,7 +87,12 @@ a{
         border: none;
         height: 100%;
         width: 100% !important;
-      }
+        .el-menu-item {
+          span {
+           margin-left: 10px;
+          }
+        }
+    }
     .main-container {
         min-height: 100%;
         transition: margin-left .25s;

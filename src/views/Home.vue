@@ -29,7 +29,7 @@ export default {
     Amap
   },
   created() {
-    this.$message({ message: '这是一条消息提示', duration: 0, center: true })
+    this.$message({ message: '这是一条消息提示', duration: 0, center: true, type: 'success' })
     console.log('createdHome')
     getloading().then(res => {
       console.log('home', res)
