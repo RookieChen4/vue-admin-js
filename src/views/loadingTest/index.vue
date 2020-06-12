@@ -1,17 +1,30 @@
 <template>
-  <div v-loading="loading" class="loading">123</div>
+  <div>
+    <datepicker :minimumView="'month'" :maximumView="'month'">
+    </datepicker>
+    <diydatepicker />
+    <diydatepicker />
+    <div v-loading="loading" class="loading">123</div>
+  </div>
 </template>
 
 <script>
 import { getloading } from '@/api/loading'
 import loading from '@/directives/loading'
+import Datepicker from 'vuejs-datepicker'
+import diydatepicker from './DiydatePicker'
 export default {
   name: 'Loading',
   directives: {
     loading
   },
+  components: {
+    Datepicker,
+    diydatepicker
+  },
   data() {
     return {
+      value1: new Date(),
       msg: '123',
       loading: true
     }
