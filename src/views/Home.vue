@@ -5,8 +5,9 @@
       <Scroll />
       <div class="container">
         <div class="grid-item1"><ScrollList /></div>
-        <div class="grid-item2"><ScrollList /></div>
+        <div class="grid-item2"><test :dateList="list" /></div>
         <div class="grid-item3">1233</div>
+        <button @click="addList">addList</button>
         <svg-icon icon-class="dashboard" />
       </div>
       <ScrollList style="display:none" />
@@ -21,12 +22,19 @@ import Scroll from '@/components/NoticeList'
 import ScrollList from '@/components/ScrollList'
 import Amap from '@/components/Amap'
 import { getloading } from '@/api/loading'
+import test from '@/components/ScrollList/test.vue'
 export default {
   name: 'Home',
   components: {
     Scroll,
     ScrollList,
-    Amap
+    Amap,
+    test
+  },
+  data() {
+    return {
+      list: []
+    }
   },
   created() {
     this.$message({ message: '这是一条消息提示', duration: 0, center: true, type: 'success' })
@@ -36,11 +44,90 @@ export default {
     }).catch(err => console.error(err))
   },
   mounted() {
+  },
+  methods: {
+    addList() {
+      this.list = [{
+        name: '你好',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: '你好',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      },
+      {
+        name: 'cjh',
+        status: '1',
+        type: '1',
+        time: '2010-1-1'
+      }]
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+button {
+  pointer-events: auto;
+}
 .home {
   height: 100%;
 }

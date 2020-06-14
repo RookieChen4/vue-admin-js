@@ -5,6 +5,10 @@
     <diydatepicker />
     <diydatepicker />
     <div v-loading="loading" class="loading">123</div>
+    <!-- <test :style="{height:height,width:width}"/> -->
+    <div style="height:200px">
+      <ScrollList/>
+    </div>
   </div>
 </template>
 
@@ -13,6 +17,8 @@ import { getloading } from '@/api/loading'
 import loading from '@/directives/loading'
 import Datepicker from 'vuejs-datepicker'
 import diydatepicker from './DiydatePicker'
+// import test from '@/components/ScrollList/test.vue'
+import ScrollList from '@/components/ScrollList'
 export default {
   name: 'Loading',
   directives: {
@@ -20,10 +26,14 @@ export default {
   },
   components: {
     Datepicker,
-    diydatepicker
+    diydatepicker,
+    // test,
+    ScrollList
   },
   data() {
     return {
+      height: '300px',
+      width: '400px',
       value1: new Date(),
       msg: '123',
       loading: true
