@@ -2,11 +2,11 @@
   <div class="container-scroll">
     <div class="textBox">
       <transition name="slide">
-        <p :key="text.id" class="text">{{ text.val }}</p>
+        <p :key="text.time" class="text"><span>{{ text.title }}</span><span>{{ text.time }}</span></p>
       </transition>
     </div>
     <div v-for="(item, index) in textArr2" :key="index">
-      <p>{{ item }}</p>
+      <p><span>{{ item.title }}</span><span>{{ item.time }}</span></p>
     </div>
   </div>
 </template>
@@ -17,43 +17,30 @@ export default {
   data() {
     return {
       textArr: [
-        '1 第一条公告',
-        '2 第二条公告第二条公告',
-        '3 第三条公告第三条公告第三条公告'
+        { title: '1.瑞金新村小区新增一条保修工单,瑞金新村小撒旦撒', time: '2020/12/04 19:36:11' },
+        { title: '2.瑞金新村小区新增一条保修工单,瑞金新村小撒旦撒', time: '2020/12/04 19:36:12' },
+        { title: '3.瑞金新村小区新增一条保修工单,瑞金新村小撒旦撒', time: '2020/12/04 19:36:13' }
       ],
-      textArr2: [],
-      number: 0
+      textArr2: [
+        { title: '2.瑞金新村小区新增一条保修工单,瑞金新村小撒旦撒', time: '2020/12/04 19:36:12' },
+        { title: '3.瑞金新村小区新增一条保修工单,瑞金新村小撒旦撒', time: '2020/12/04 19:36:13' }
+      ],
+      text: ''
     }
   },
-  computed: {
-    text() {
-      return {
-        id: this.number,
-        val: this.textArr[this.number]
-      }
-    }
-  },
-  mounted() {
-    this.textArr2 = [
-      '1 第一条公告',
-      '2 第二条公告第二条公告',
-      '3 第三条公告第三条公告第三条公告'
-    ]
+  created() {
+    this.text = this.textArr[0]
     this.startMove()
   },
   methods: {
     startMove() {
-      // eslint-disable-next-line
-      let temp = [...this.textArr]
       // eslint-disable-next-line no-unused-vars
       let timer = setTimeout(() => {
-        if (this.number === this.textArr.length - 1) {
-          this.textArr2 = [...temp]
-          this.number = 0
-        } else {
-          this.textArr2.splice(this.number, 1)
-          this.number += 1
+        if (!this.textArr2.length) {
+          this.textArr2 = [...this.textArr]
         }
+        this.textArr2.push(this.text)
+        this.text = this.textArr2.shift()
         timer = null
         this.startMove()
       }, 2000) // 滚动不需要停顿则将2000改成动画持续时间
@@ -81,6 +68,7 @@ export default {
     text-align: center;
   }
   .text {
+    color: red;
     width: 100%;
     position: absolute;
     bottom: 0;
